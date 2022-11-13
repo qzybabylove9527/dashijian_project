@@ -26,12 +26,13 @@ $(function(){
     })
 
     //监听注册事件
-    var data = {
-        username:$('#form-reg [name=username]').val(),
-        password:$('#form-reg [name=password]').val()
-    }
+    
     $('#form-reg').on('submit',function(e){
         e.preventDefault()
+        var data = {
+            username:$('#form-reg [name=username]').val(),
+            password:$('#form-reg [name=password]').val()
+        }
         $.post('/api/reguser',data,function(res){
             if(res.status !==0) return layer.msg(res.message);
             layer.msg('注册成功，请登录')
