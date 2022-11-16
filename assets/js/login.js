@@ -44,7 +44,7 @@ $(function(){
     $('#form-login').submit(function(e){
         e.preventDefault()
         $.ajax({
-            url:'/api/reguser',
+            url:'/api/login',
             method:'POST',
             data:$(this).serialize(),
             success:function(res){
